@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="org.home.entities.Pet" table="pet">
+	
+		<id name="id" column="id_pet">
+            <generator class="identity" />
+        </id>
+        
+        <property name="name" column="e_nombre" />
+        
+<!--         <many-to-one name="breedPet" fetch="select" class="org.home.entities.PetBreed"> -->
+<!--             <column name="fk_id_pet_breed" not-null="true"/> -->
+<!--         </many-to-one> -->
+        
+        <many-to-one name="breedPet" class="org.home.entities.PetBreed" column="fk_id_pet_breed" lazy="false" cascade="all" />
+		
+	</class>
+	
+</hibernate-mapping>

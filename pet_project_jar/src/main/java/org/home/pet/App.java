@@ -35,15 +35,16 @@ public class App
 //        breedDao.save(newBreed);
         
         
+        
         PetBreed pastorBreed = new PetBreed();
-        pastorBreed.setId(2L);
+        pastorBreed.setCode("pastor");
         pastorBreed.setDescription("Pastor Aleman");
+        
         //breedDao.save(pastorBreed);
         
         Pet dogWisky = new Pet();
-        dogWisky.setId(2L);
-        dogWisky.setName("Wiskty");
-        dogWisky.setBreed(pastorBreed);
+        dogWisky.setName("Wisky");
+        dogWisky.setBreedPet(pastorBreed);
         
         PetDAO daoPet = new PetDAO();
         daoPet.save(dogWisky);

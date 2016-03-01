@@ -11,26 +11,26 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="pet_bread")
+//@Entity
+//@Table(name="pet_bread")
 public class PetBreed implements Serializable {
 	
 	
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name="id_pet_bread")
+//	@Id
+//	@Column(name="id_pet_bread")
 	private Long id;
 	
-	@Column
+//	@Column
 	private String description;
 	
-	@Column(name="bread_code")
+//	@Column(name="bread_code")
 	private String code;
 
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="PET_BREAD_id_pet_bread")
-	private List<Pet> pets;
+//	@OneToMany(cascade=CascadeType.ALL)
+//	@JoinColumn(name="PET_BREAD_id_pet_bread")
+	private List<Pet> mascotas;
 	
 	public PetBreed() {
 	}
@@ -59,12 +59,12 @@ public class PetBreed implements Serializable {
 		this.code = code;
 	}
 
-	public List<Pet> getPets() {
-		return pets;
+	public List<Pet> getMascotas() {
+		return mascotas;
 	}
 
-	public void setPets(List<Pet> pets) {
-		this.pets = pets;
+	public void setMascotas(List<Pet> pets) {
+		this.mascotas = pets;
 	}
 
 	@Override

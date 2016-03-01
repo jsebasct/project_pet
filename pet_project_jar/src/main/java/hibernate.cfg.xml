@@ -22,14 +22,17 @@
 
 		<!-- Drop and re-create the database schema on startup -->
 		<!--property name="hbm2ddl.auto">validate</property-->
-                <property name="hbm2ddl.auto">update</property>
-<!--         <property name="hbm2ddl.auto">create</property> -->
+<!--                 <property name="hbm2ddl.auto">update</property> -->
+        <property name="hbm2ddl.auto">create</property>
                 <!--property name="hbm2ddl.auto">create-drop</property-->
                 
 <!--             	<mapping class="entities.Persona" /> -->
 <!--             	<mapping class="entities.Casa" /> -->
+<!-- 		<mapping resource="org/home/entities/User.hbm.xml" /> -->
 
-		<mapping class="org.home.entities.User" />
+		<mapping resource="org/home/entities/Pet.hbm.xml" />
+		<mapping resource="org/home/entities/PetBreed.hbm.xml" />
+		
                 
 	</session-factory>
 </hibernate-configuration>
