@@ -11,11 +11,15 @@
         
         <property name="name" column="e_nombre" />
         
-<!--         <many-to-one name="breedPet" fetch="select" class="org.home.entities.PetBreed"> -->
-<!--             <column name="fk_id_pet_breed" not-null="true"/> -->
-<!--         </many-to-one> -->
         
         <many-to-one name="breedPet" class="org.home.entities.PetBreed" column="fk_id_pet_breed" lazy="false" cascade="all" />
+		
+		
+        <bag name="colores" lazy="true" cascade="all" table="pet_has_colour" >
+            <key column="fk_id_pet_breed" />
+            <many-to-many column="fk_id_pet_colour" class="org.home.entities.Colour" />
+        </bag>
+		
 		
 	</class>
 	
