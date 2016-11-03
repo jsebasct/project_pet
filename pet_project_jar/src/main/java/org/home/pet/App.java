@@ -1,13 +1,12 @@
 package org.home.pet;
 
-import java.util.List;
 
 import org.home.dao.BreedDAO;
+import org.home.dao.ColorDAO;
 import org.home.dao.PetDAO;
-import org.home.dao.UserDAO;
+import org.home.entities.Colour;
 import org.home.entities.Pet;
 import org.home.entities.PetBreed;
-import org.home.entities.User;
 
 /**
  * Hello world!
@@ -27,26 +26,37 @@ public class App
        
         System.out.println("End Reading users");
         
-        BreedDAO breedDao = new BreedDAO();
+//        BreedDAO breedDao = new BreedDAO();
         
 //        PetBreed newBreed = new PetBreed();
-//        newBreed.setId(1L);
+////        newBreed.setId(1L);
 //        newBreed.setCode("Bulldog");
-//        breedDao.save(newBreed);
+////        breedDao.save(newBreed);
+        
         
         
         PetBreed pastorBreed = new PetBreed();
-        pastorBreed.setId(2L);
+        pastorBreed.setCode("pastor");
         pastorBreed.setDescription("Pastor Aleman");
-        //breedDao.save(pastorBreed);
+        
+//        breedDao.save(pastorBreed);
         
         Pet dogWisky = new Pet();
-        dogWisky.setId(2L);
-        dogWisky.setName("Wiskty");
-        dogWisky.setBreed(pastorBreed);
+        dogWisky.setName("Wisky");
+        dogWisky.setBreedPet(pastorBreed);
         
         PetDAO daoPet = new PetDAO();
+        
+        
+        Colour colorBrown = new Colour();
+        colorBrown.setDesc("Color Café");
+        
+        dogWisky.addColor(colorBrown);
+        
         daoPet.save(dogWisky);
+        
+//        ColorDAO colorDAO = new ColorDAO();
+//        colorDAO.save(colorBrown);
         
 //        PetBreed dobermanBreed = new PetBreed();
 //        dobermanBreed.setId(3L);

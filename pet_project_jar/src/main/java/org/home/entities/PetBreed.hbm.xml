@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="org.home.entities.PetBreed" table="pet_breed">
+	
+		<id name="id" column="id_pet_breed">
+            <generator class="identity" />
+        </id>
+        
+        <property name="description" column="breed_desc"/>
+        <property name="code" column="breed_code"/>
+        
+        <bag name="mascotas" lazy="true" cascade="all">
+ 			<key column="fk_id_pet_breed" />
+            <one-to-many class="org.home.entities.Pet"/>
+        </bag>        
+	</class>
+	
+</hibernate-mapping>

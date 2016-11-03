@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.home.entities.Colour" table="pet_colour">
+		<id name="id" column="id_pet_colour">
+                    <generator class="identity"/>
+		</id>
+                
+		<property name="desc" column="color_desc"/>
+		
+		<bag name="mascotas" lazy="true" cascade="all" table="pet_has_colour" >
+             <key column="fk_id_pet_colour" />
+             <many-to-many column="fk_id_pet_breed" class="org.home.entities.Pet" />
+         </bag>
+		
+                
+                
+                
+	</class>
+</hibernate-mapping>

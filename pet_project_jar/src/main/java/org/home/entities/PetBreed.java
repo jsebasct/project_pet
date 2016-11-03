@@ -3,74 +3,56 @@ package org.home.entities;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="pet_bread")
 public class PetBreed implements Serializable {
-	
-	
-	private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name="id_pet_bread")
-	private Long id;
-	
-	@Column
-	private String description;
-	
-	@Column(name="bread_code")
-	private String code;
+    private static final long serialVersionUID = 1L;
 
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="PET_BREAD_id_pet_bread")
-	private List<Pet> pets;
-	
-	public PetBreed() {
-	}
-	
-	public Long getId() {
-		return id;
-	}
+    private Long id;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    private String description;
 
-	public String getDescription() {
-		return description;
-	}
+    private String code;
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    private List<Pet> mascotas;
 
-	public String getCode() {
-		return code;
-	}
+    public PetBreed() {
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public List<Pet> getPets() {
-		return pets;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setPets(List<Pet> pets) {
-		this.pets = pets;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	@Override
-	public String toString() {
-		return "PetBread [id=" + id + ", description=" + description + ", code=" + code + "]";
-	}
-	
-	
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public List<Pet> getMascotas() {
+        return mascotas;
+    }
+
+    public void setMascotas(List<Pet> pets) {
+        this.mascotas = pets;
+    }
+
+    @Override
+    public String toString() {
+        return "PetBread [id=" + id + ", description=" + description + ", code=" + code + "]";
+    }
+
 }

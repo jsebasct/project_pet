@@ -1,31 +1,23 @@
 package org.home.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-@Entity
 public class Pet implements Serializable {
-	
+
 	private static final long serialVersionUID = -7482911561529410314L;
 
-	@Id
-	@Column(name="id_pet")
 	private Long id;
-	
-	@Column(name="pet_name")
-	private String name;
-	
-	@ManyToOne
-	@JoinColumn(name="PET_BREAD_id_pet_bread")
-	private PetBreed breed;
 
+	private String name;
+
+	private PetBreed breedPet;
+
+	private List<Colour> colores;
+	
 	public Pet() {
-		
+		colores = new ArrayList<Colour>();
 	}
 
 	public Long getId() {
@@ -44,12 +36,25 @@ public class Pet implements Serializable {
 		this.name = name;
 	}
 
-	public PetBreed getBreed() {
-		return breed;
+	public PetBreed getBreedPet() {
+		return breedPet;
 	}
 
-	public void setBreed(PetBreed breed) {
-		this.breed = breed;
+	// breedPet
+	public void setBreedPet(PetBreed breed) {
+		this.breedPet = breed;
+	}
+
+	public List<Colour> getColores() {
+		return colores;
+	}
+
+	public void setColores(List<Colour> colores) {
+		this.colores = colores;
 	}
 	
+	public void addColor(Colour newColor) {
+		this.colores.add(newColor);
+	}
+
 }
