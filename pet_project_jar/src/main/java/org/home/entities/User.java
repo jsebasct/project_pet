@@ -8,26 +8,26 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "users")
+//@Entity
+//@Table(name = "users")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
+//	@Id
 	@Column(name = "id_user")
 	private Long userID;
 	
-	@Column(name =  "name")
+//	@Column(name =  "name")
 	private String userName;
 	
-	@Column(name =  "password")
+//	@Column(name =  "password")
 	private String password;
 	
-	@Column(name =  "email_adress")
+//	@Column(name =  "email_adress")
 	private String emailAddress;
 	
-	@Column(name = "last_logon")
+//	@Column(name = "last_logon")
 	private Date lastLogon;
 
 	public User() {
